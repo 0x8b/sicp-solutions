@@ -29,7 +29,7 @@
 (define (square x)
   (* x x))
 
-(define (pi-wallis n)
+(define (pi-wallis n) ; https://en.wikipedia.org/wiki/Wallis_product
   (define (term n)
     (/ (square (* 2 n)) (* (- (* 2 n) 1) (+ (* 2 n) 1))))
 
