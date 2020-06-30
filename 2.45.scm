@@ -1,9 +1,9 @@
-(define (split join join-smaller)
+(define (split comb comb-smaller)
   (define (splitter painter n)
     (if (= n 0)
         painter
         (let ((smaller (splitter painter (- n 1))))
-          (join painter (join-smaller smaller smaller)))))
+          (comb painter (comb-smaller smaller smaller)))))
 
   splitter)
 
