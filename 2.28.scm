@@ -1,5 +1,3 @@
-(import (scheme base))
-
 (define nil '())
 
 (define (fringe tree)

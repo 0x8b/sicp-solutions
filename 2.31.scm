@@ -1,7 +1,3 @@
-(import (scheme base))
-
-(define nil '())
-
 (define (tree-map proc tree)
   (map (lambda (sub-tree)
          (if (pair? sub-tree)

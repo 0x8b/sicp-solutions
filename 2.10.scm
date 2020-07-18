@@ -1,5 +1,5 @@
-(define (make-interval lb ub)
-  (cons lb ub))
+(define (make-interval a b)
+  (cons a b))
 
 (define (lower-bound interval)
   (min (car interval)
@@ -18,7 +18,8 @@
                    (max p1 p2 p3 p4))))
 
 (define (div-interval x y)
-  (if (or (= 0 (lower-bound y)) (= 0 (upper-bound y)))
+  (if (or (= 0 (lower-bound y))
+          (= 0 (upper-bound y)))
       (error "One of bounds is 0.")
       (mul-interval x
                     (make-interval (/ 1.0 (upper-bound y))

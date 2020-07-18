@@ -1,5 +1,3 @@
-(import (scheme base))
-
 ; (define (make-mobile left right)
 ;   (list left right))
 

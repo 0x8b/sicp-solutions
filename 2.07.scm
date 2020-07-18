@@ -1,5 +1,5 @@
-(define (make-interval lb ub)
-  (cons lb ub))
+(define (make-interval a b)
+  (cons a b))
 
 (define (lower-bound interval)
   (min (car interval)

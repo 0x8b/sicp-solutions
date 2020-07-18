@@ -44,42 +44,42 @@
           ((frame-coord-map frame) (end-segment segment))))
       segment-list)))
 
-(define outline
-  (let ((bl (make-point 0 0)
-        (br (make-point 1 0))
-        (tl (make-point 0 1))
-        (tr (make-point 1 1))))
+(define outline-segments
+  (let ((bl (make-vect 0.0 0.0))
+        (br (make-vect 1.0 0.0))
+        (tl (make-vect 0.0 1.0))
+        (tr (make-vect 1 1)))
     (let ((segments (list (make-segment bl br)
                           (make-segment br tr)
                           (make-segment tr tl)
                           (make-segment tl bl))))
       (segments->painter segments))))
 
-(define x
-  (let ((bl (make-point 0 0)
-        (br (make-point 1 0))
-        (tl (make-point 0 1))
-        (tr (make-point 1 1))))
+(define x-segments
+  (let ((bl (make-vect 0.0 0.0))
+        (br (make-vect 1.0 0.0))
+        (tl (make-vect 0.0 1.0))
+        (tr (make-vect 1.0 1.0)))
     (let ((segments (list (make-segment bl tr)
                           (make-segment br tl))))
       (segments->painter segments))))
 
-(define diamond
-  (let ((b (make-point 0.5 0))
-        (r (make-point 1 0.5))
-        (t (make-point 0.5 1))
-        (l (make-point 0 0.5)))
+(define diamond-segments
+  (let ((b (make-vect 0.5 0.0))
+        (r (make-vect 1.0 0.5))
+        (t (make-vect 0.5 1.0))
+        (l (make-vect 0.0 0.5)))
     (let ((segments (list (make-segment b r)
                           (make-segment r t)
                           (make-segment t l)
                           (make-segment l b))))
       (segments->painter segments))))
 
-(define wave
-  (let ((a (make-point 0 0.5))
-        (b (make-point 0.25 0.75))
-        (c (make-point 0.75 0.25))
-        (d (make-point 1 0.5)))
+(define wave-segments
+  (let ((a (make-vect 0.00 0.50))
+        (b (make-vect 0.25 0.75))
+        (c (make-vect 0.75 0.25))
+        (d (make-vect 1.00 0.50)))
     (let ((segments (list (make-segment a b)
                           (make-segment b c)
                           (make-segment c d))))

@@ -1,5 +1,3 @@
-(import (scheme base))
-
 (define nil '())
 
 (define (accumulate op initial sequence)

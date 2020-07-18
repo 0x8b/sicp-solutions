@@ -14,6 +14,5 @@
                  (+ (upper-bound x) (upper-bound y))))
 
 (define (sub-interval x y)
-  (add-interval x
-                (make-interval (- (lower-bound y))
-                               (- (upper-bound y)))))
+  (make-interval (- (lower-bound x) (upper-bound y))
+                 (- (upper-bound x) (lower-bound y))))

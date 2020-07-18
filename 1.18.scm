@@ -1,15 +1,14 @@
-(define (double a)
-  (+ a a))
+(define (double x)
+  (+ x x))
 
-(define (halve a)
-  (/ a 2))
+(define (halve x)
+  (/ x 2))
 
-(define (multiply a b)
-  (define (multiply-iter a b sum)
-    (if (= b 0)
-        sum
-        (if (even? b)
-            (multiply-iter (double a) (halve b) sum)
-            (multiply-iter a (- b 1) (+ a sum)))))
+(define (* x y)
+  (define (iter x y a)
+    (cond
+      ((= y 0) a)
+      ((even? y) (iter (double x) (halve y) a))
+      (else (iter x (- y 1) (+ x a)))))
 
-  (multiply-iter a b 0))
+  (iter a b 0))

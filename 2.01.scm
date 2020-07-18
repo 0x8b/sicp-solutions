@@ -5,11 +5,11 @@
 
 (define (make-rat n d)
   (let ((g (gcd n d)))
-    (let ((n-pos (abs (/ n g)))
-          (d-pos (abs (/ d g))))
+    (let ((n-abs (abs (/ n g)))
+          (d-abs (abs (/ d g))))
       (if (< (* n d) 0)
-          (cons (- n-pos) d-pos)
-          (cons n-pos d-pos)))))
+          (cons (- n-abs) d-abs)
+          (cons n-abs d-abs)))))
 
 (define (numer x)
   (car x))

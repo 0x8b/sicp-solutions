@@ -1,15 +1,14 @@
-(define (square a)
-  (* a a))
+(define (square x)
+  (* x x))
 
-(define (halve a)
-  (/ a 2))
+(define (halve x)
+  (/ x 2))
 
 (define (fast-expt b n)
-  (define (fast-expt-iter b n product)
-    (if (= n 0)
-        product
-        (if (even? n)
-            (fast-expt-iter (square b) (halve n) product)
-            (fast-expt-iter b (dec n) (* b product)))))
+  (define (fast-expt-iter b n a)
+    (cond
+      ((= n 0) a)
+      ((even? n) (fast-expt-iter (square b) (halve n) a))
+      (else (fast-expt-iter b (- n 1) (* b a)))))
 
   (fast-expt-iter b n 1))

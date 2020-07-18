@@ -69,4 +69,4 @@
     (else
       (error "unknown expression type: DERIV" exp))))
 
-(deriv '(* x y (+ x 3)) 'x)
+(deriv '(* x y (+ x 3)) 'x) ; (+ (* x y) (* y (+ x 3)))

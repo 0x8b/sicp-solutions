@@ -1,5 +1,3 @@
-(import (scheme base))
-
 (define nil '())
 
 (define (square-tree tree)
@@ -11,6 +9,6 @@
 (define (square-tree-map tree)
   (map (lambda (sub-tree)
          (if (pair? sub-tree)
-             (square-tree sub-tree)
+             (square-tree-map sub-tree)
              (square sub-tree)))
        tree))

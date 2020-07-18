@@ -1,19 +1,16 @@
 (define (cons a b)
   (* (expt 2 a) (expt 3 b)))
 
-(define (car c)
-  (let ((b (cdr c)))
-    (let ((a (/ (log (/ c (expt 3 b)))
-                (log 2))))
-      (inexact->exact (round a)))))
+(define (extract-exponent base n)
+  (if (= 0 (remainder n base))
+      (+ 1 (extract-exponent base (/ n base)))
+      0))
 
-(define (cdr c)
-  (define (count counter number)
-    (if (= 0 (remainder number 3))
-        (count (+ counter 1) (/ number 3))
-        counter))
+(define (car n)
+  (extract-exponent 2 n))
 
-  (count 0 c))
+(define (cdr n)
+  (extract-exponent 3 n))
 
 ; test
 (define c (cons 6 5))

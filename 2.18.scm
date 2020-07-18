@@ -1,3 +1,5 @@
+(define nil '())
+
 (define (reverse list)
   (define (do-reverse list reversed-list)
     (if (null? list)
