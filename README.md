@@ -15,3 +15,4 @@ My solutions to [Structure and Interpretation of Computer Programs, 2nd edition]
 - 2.22
 - 2.42, 2.43
 - 2.58b
+- 2.72-74

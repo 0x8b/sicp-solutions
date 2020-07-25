@@ -39,5 +39,5 @@
      (list tree-1 tree-2 tree-3 tree-4 tree-5)) ;  (#t #t #t #t #t)
 
 ; b)
-; tree->list-1: O(nlogn), becouse append takes O(n)
+; tree->list-1: O(nlogn), because append takes O(n)
 ; tree->list-2: O(n)
