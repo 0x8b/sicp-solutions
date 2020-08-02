@@ -1,0 +1,5 @@
+(define (make-joint account original-password new-password)
+  (lambda (password m)
+    (if (eq? password new-password)
+        (account original-password m)
+        (error "Incorrect password"))))
